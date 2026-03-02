@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface SendCardProps {
@@ -127,9 +128,10 @@ export const SendCard: React.FC<SendCardProps> = ({
               </>
             )}
           </button>
-          <button className="btn-back">← Back to Overview</button>
+          <button className="btn-back">← Back to Policy Overview</button>
         </div>
       </div>
     </div>
   );
 };
+
