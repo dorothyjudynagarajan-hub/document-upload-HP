@@ -622,6 +622,181 @@ nav.nav-top {
   font-size: 10px;
 }
 
+/* File List */
+.file-list-wrap {
+  display: none;
+  margin-top: 0;
+}
+
+.file-list-wrap.visible {
+  display: block;
+}
+
+.fl-divider {
+  height: 1px;
+  background: var(--slate-200);
+  margin: 24px 0;
+}
+
+.file-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.file-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius);
+  transition: all 0.2s;
+}
+
+.file-card:hover {
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.file-card.valid {
+  background: var(--green-light);
+  border-color: var(--green);
+}
+
+.file-card.error {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.fc-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.file-card.valid .fc-icon {
+  background: white;
+}
+
+.file-card.error .fc-icon {
+  background: white;
+}
+
+.fc-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--slate-500);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fc-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.fc-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-800);
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fc-meta {
+  font-size: 11px;
+  color: var(--slate-500);
+}
+
+.fc-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-uploading {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+.badge-valid {
+  background: var(--green);
+  color: white;
+}
+
+.badge-error {
+  background: #ef4444;
+  color: white;
+}
+
+.fc-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+.spin-ring {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fc-remove {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--slate-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.fc-remove:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.fc-remove svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--slate-400);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.fc-remove:hover svg {
+  stroke: #ef4444;
+}
+
 /* Send Card */
 .send-card {
   background: white;
@@ -1320,6 +1495,9 @@ nav.nav-top {
   font-weight: 600;
   color: var(--slate-800);
   margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .review-doc-type {
