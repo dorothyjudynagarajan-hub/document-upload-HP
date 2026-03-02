@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Allstate Project Files</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .info-value {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .steps {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+            border-radius: 8px;
+        }
+        
+        .steps h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .steps ol {
+            margin-left: 20px;
+        }
+        
+        .steps li {
+            color: #555;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: left;
+            color: #1976d2;
+            font-size: 14px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📦</div>
+        <h1>Allstate Document Upload</h1>
+        <p class="subtitle">Complete project files ready for deployment</p>
+        
+        <div class="info-box">
+            <div class="info-item">
+                <span class="info-label">Package:</span>
+                <span class="info-value">allstate-document-upload.zip</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Size:</span>
+                <span class="info-value">~350 KB</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Files:</span>
+                <span class="info-value">60+ files</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Format:</span>
+                <span class="info-value">ZIP Archive</span>
+            </div>
+        </div>
+        
+        <a href="/allstate-document-upload.zip" download="allstate-document-upload.zip" class="download-btn">
+            ⬇️ Download ZIP File
+        </a>
+        
+        <div class="note">
+            💡 <strong>Tip:</strong> If clicking doesn't work, right-click the button above and select "Save link as..."
+        </div>
+        
+        <div class="steps">
+            <h3>📋 Next Steps After Download:</h3>
+            <ol>
+                <li>Extract the ZIP file to a folder</li>
+                <li>Open Terminal/Command Prompt</li>
+                <li>Navigate to the extracted folder</li>
+                <li>Run: <code>git init && git add . && git commit -m "Initial commit"</code></li>
+                <li>Push to GitHub using the commands in QUICK-START-CHECKLIST.md</li>
+                <li>Deploy to Cloudflare Pages</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            📚 Full instructions included in QUICK-START-CHECKLIST.md
+        </div>
+    </div>
+    
+    <script>
+        // Try to trigger download when page loads
+        window.addEventListener('load', function() {
+            const btn = document.querySelector('.download-btn');
+            btn.addEventListener('click', function(e) {
+                // If default download fails, try fetch blob method
+                setTimeout(function() {
+                    console.log('Download initiated');
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

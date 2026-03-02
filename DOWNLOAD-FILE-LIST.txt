@@ -1,0 +1,54 @@
+============================================================
+FILES TO DOWNLOAD - COMPLETE LIST
+============================================================
+
+If you need to download files manually, get these:
+
+ROOT LEVEL FILES (in main folder):
+-----------------------------------
+1.  package.json
+2.  package-lock.json
+3.  astro.config.mjs
+4.  tsconfig.json
+5.  wrangler.jsonc
+6.  netlify.toml
+7.  components.json
+8.  webflow.json
+9.  worker-configuration.d.ts
+10. .gitignore
+11. .env
+12. README.md
+13. DEPLOYMENT.md
+14. EXPORT_INSTRUCTIONS.md
+15. GITHUB-UPLOAD-GUIDE.md
+16. QUICK-START-CHECKLIST.md
+17. DOWNLOAD-FILE-LIST.txt (this file)
+18. deploy.sh
+
+FOLDERS TO DOWNLOAD (get entire folders):
+------------------------------------------
+19. src/ folder
+    - Contains: components/, hooks/, layouts/, lib/, pages/, site-components/, styles/
+    - This is the MOST IMPORTANT folder - get everything inside!
+
+20. generated/ folder
+    - Contains: dev-only.js, fonts.css, webflow.css
+
+21. .github/ folder
+    - Contains: workflows/deploy-cloudflare.yml, workflows/deploy-vercel.yml
+
+OPTIONAL (can skip these):
+--------------------------
+- node_modules/ (DON'T download - will reinstall)
+- dist/ (DON'T download - will rebuild)
+- .astro/ (DON'T download - build cache)
+
+============================================================
+TOTAL: ~60 files in 3 main folders
+SIZE: ~330 KB (without node_modules)
+============================================================
+
+ALTERNATIVE: Look for a "Download All" or "Export Project" 
+button in your interface to get everything at once!
+
+============================================================

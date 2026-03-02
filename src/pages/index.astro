@@ -1,0 +1,11 @@
+---
+import MainLayout from '../layouts/main.astro';
+import { DocumentUploadPage } from '../components/DocumentUploadPage';
+import '../styles/allstate.css';
+
+const pageClass = 'allstate-page';
+---
+
+<MainLayout pageClass={pageClass}>
+  <DocumentUploadPage client:only="react" />
+</MainLayout>
