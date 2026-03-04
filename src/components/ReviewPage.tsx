@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import type { UploadedFile } from './DocumentUpload';
 
@@ -53,22 +54,6 @@ export const ReviewPage: React.FC<ReviewPageProps> = ({ files, onSubmit, onBack 
             <div className="review-field">
               <div className="review-field-label">Roof Replacement Date</div>
               <div className="review-field-value">December 15, 2025</div>
-            </div>
-            <div className="review-field">
-              <div className="review-field-label">Roofing Material</div>
-              <div className="review-field-value">Impact-Resistant Architectural Shingles</div>
-            </div>
-            <div className="review-field">
-              <div className="review-field-label">Contractor</div>
-              <div className="review-field-value">Texas Premier Roofing & Construction LLC</div>
-            </div>
-            <div className="review-field">
-              <div className="review-field-label">Permit Number</div>
-              <div className="review-field-value">DFW-2025-RF-48291</div>
-            </div>
-            <div className="review-field">
-              <div className="review-field-label">Warranty Period</div>
-              <div className="review-field-value">25 Years (Manufacturer + Workmanship)</div>
             </div>
           </div>
         </div>
@@ -207,5 +192,6 @@ export const ReviewPage: React.FC<ReviewPageProps> = ({ files, onSubmit, onBack 
     </>
   );
 };
+
 
 

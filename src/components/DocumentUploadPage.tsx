@@ -1,4 +1,6 @@
 
+
+
 import React, { useState, useRef } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
@@ -99,13 +101,12 @@ export const DocumentUploadPage: React.FC = () => {
   return (
     <>
       <Navigation />
-      <div className="page">
-        <Stepper 
-          hasFiles={hasFiles} 
-          allValid={allValid}
-          currentStep={currentStep}
-        />
-
+      <Stepper 
+        hasFiles={hasFiles} 
+        allValid={allValid}
+        currentStep={currentStep}
+      />
+      <div className="page with-horizontal-stepper">
         <main className="main-content">
           {currentStep === 'upload' && (
             <>
@@ -120,6 +121,21 @@ export const DocumentUploadPage: React.FC = () => {
                   Policy Home 942041880 · Add at least one document to confirm your completed
                   roof work.
                 </p>
+              </div>
+
+              <div className="info-banner">
+                <div className="info-banner-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                  </svg>
+                </div>
+                <div className="info-banner-content">
+                  <div className="info-banner-text">
+                    You may be eligible for a roof replacement discount if you had changed your roof within the last 12 months. Partial replacement and repairs may not be eligible.
+                  </div>
+                </div>
               </div>
 
               <div className="upload-card">
@@ -180,6 +196,8 @@ export const DocumentUploadPage: React.FC = () => {
     </>
   );
 };
+
+
 
 
 

@@ -7,100 +7,58 @@ interface StepperProps {
 }
 
 export const Stepper: React.FC<StepperProps> = ({ hasFiles, allValid, currentStep }) => {
-  const uploadDone = currentStep === 'review' || currentStep === 'confirm';
-  const reviewDone = currentStep === 'confirm';
-  const confirmDone = currentStep === 'confirm';
+  const steps = [
+    { id: 'upload', label: 'Upload documents', number: 1 },
+    { id: 'review', label: 'Review & edit', number: 2 },
+    { id: 'confirm', label: 'Confirm', number: 3 }
+  ];
+
+  const getCurrentStepIndex = () => {
+    if (currentStep === 'upload') return 0;
+    if (currentStep === 'review') return 1;
+    if (currentStep === 'confirm') return 2;
+    return 0;
+  };
+
+  const currentIndex = getCurrentStepIndex();
 
   return (
-    <aside className="left-panel">
-      <div className="left-panel-label">Your progress</div>
-      <div className="stepper">
-        <div className="step-item">
-          <button className={`step-btn ${uploadDone ? 'done' : currentStep === 'upload' ? 'active' : ''}`}>
-            <div className="step-indicator">
-              {uploadDone ? (
-                <svg
-                  viewBox="0 0 16 16"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="3 8 6.5 11.5 13 5" />
-                </svg>
-              ) : (
-                '1'
-              )}
-            </div>
-            <div>
-              <div className="step-label">Upload</div>
-              <div className="step-sublabel">Add your documents</div>
-            </div>
-          </button>
-        </div>
-        <div className={`step-connector ${uploadDone ? 'done' : ''}`}></div>
+    <div className="horizontal-stepper-wrapper">
+      <div className="horizontal-stepper">
+        {steps.map((step, index) => {
+          const isCompleted = index < currentIndex;
+          const isCurrent = index === currentIndex;
 
-        <div className="step-item">
-          <button className={`step-btn ${reviewDone ? 'done' : currentStep === 'review' ? 'active' : ''}`}>
-            <div className="step-indicator">
-              {reviewDone ? (
-                <svg
-                  viewBox="0 0 16 16"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="3 8 6.5 11.5 13 5" />
-                </svg>
-              ) : (
-                '2'
+          return (
+            <React.Fragment key={step.id}>
+              <div className={`h-step ${isCurrent ? 'current' : ''} ${isCompleted ? 'completed' : ''}`}>
+                <div className="h-step-circle">
+                  {isCompleted ? (
+                    <svg
+                      viewBox="0 0 16 16"
+                      width="12"
+                      height="12"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="3 8 6.5 11.5 13 5" />
+                    </svg>
+                  ) : (
+                    <span>{step.number}</span>
+                  )}
+                </div>
+                <div className="h-step-label">{step.label}</div>
+              </div>
+              {index < steps.length - 1 && (
+                <div className={`h-step-line ${isCompleted ? 'completed' : ''}`}></div>
               )}
-            </div>
-            <div>
-              <div className="step-label">Review</div>
-              <div className="step-sublabel">Check before sending</div>
-            </div>
-          </button>
-        </div>
-        <div className={`step-connector ${reviewDone ? 'done' : ''}`}></div>
-
-        <div className="step-item">
-          <button className={`step-btn ${confirmDone ? 'done' : ''}`}>
-            <div className="step-indicator">
-              {confirmDone ? (
-                <svg
-                  viewBox="0 0 16 16"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="3 8 6.5 11.5 13 5" />
-                </svg>
-              ) : (
-                '3'
-              )}
-            </div>
-            <div>
-              <div className="step-label">Confirm</div>
-              <div className="step-sublabel">Submit to Allstate</div>
-            </div>
-          </button>
-        </div>
+            </React.Fragment>
+          );
+        })}
       </div>
-    </aside>
+    </div>
   );
 };
-
-
-
