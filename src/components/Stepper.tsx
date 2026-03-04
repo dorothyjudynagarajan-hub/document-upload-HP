@@ -26,8 +26,9 @@ export const Stepper: React.FC<StepperProps> = ({ hasFiles, allValid, currentSte
     <div className="horizontal-stepper-wrapper">
       <div className="horizontal-stepper">
         {steps.map((step, index) => {
-          const isCompleted = index < currentIndex;
-          const isCurrent = index === currentIndex;
+          // On confirm page, all steps are completed
+          const isCompleted = currentStep === 'confirm' ? true : index < currentIndex;
+          const isCurrent = currentStep === 'confirm' ? false : index === currentIndex;
 
           return (
             <React.Fragment key={step.id}>
@@ -36,11 +37,11 @@ export const Stepper: React.FC<StepperProps> = ({ hasFiles, allValid, currentSte
                   {isCompleted ? (
                     <svg
                       viewBox="0 0 16 16"
-                      width="12"
-                      height="12"
+                      width="16"
+                      height="16"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2.5"
+                      strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
@@ -62,3 +63,5 @@ export const Stepper: React.FC<StepperProps> = ({ hasFiles, allValid, currentSte
     </div>
   );
 };
+
+

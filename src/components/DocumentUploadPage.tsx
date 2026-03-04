@@ -1,6 +1,7 @@
 
 
 
+
 import React, { useState, useRef } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
@@ -106,8 +107,8 @@ export const DocumentUploadPage: React.FC = () => {
         allValid={allValid}
         currentStep={currentStep}
       />
-      <div className="page with-horizontal-stepper">
-        <main className="main-content">
+      <div className={`page ${currentStep === 'confirm' ? 'no-sidebars' : 'with-horizontal-stepper'}`}>
+        <main className={`main-content ${currentStep === 'confirm' ? 'wide' : ''}`}>
           {currentStep === 'upload' && (
             <>
               <div className="main-header">
@@ -190,12 +191,13 @@ export const DocumentUploadPage: React.FC = () => {
           )}
         </main>
 
-        <HelpPanel />
+        {currentStep !== 'confirm' && <HelpPanel />}
       </div>
       <Footer />
     </>
   );
 };
+
 
 
 
